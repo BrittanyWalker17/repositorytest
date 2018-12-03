@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 1180px;
+            height: 800px;
+            /*background-image: url("image_01.png");*/
+            position:relative;
+        }
+
+        .corner {
+            width: 0;
+            height: 0px;
+            border-top: 400px solid red;
+            border-left: 400px solid green;
+            border-bottom: 400px solid yellow;
+            border-right: 400px solid beige;
+            float: right;
+        }
+
+        #trapezoid {
+            border-bottom: 100px solid red;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            height: 0;
+            width: 100px;
+        }
+
+        .corner span {
+            position: absolute;
+            bottom: 35px;
+            width: 100px;
+            right: 5px;
+            text-align: center;
+            font-size: 16px;
+            font-family: arial;
+            /*transform: rotate(-45deg);*/
+            display:block;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="corner"><span>20% Special Offer</span></div>
+</div>
+</body>
+</html>

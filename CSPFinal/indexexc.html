@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Single Page Scroll</title>
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .frame1 {
+            width: 1180px;
+            height: 800px;
+            background-image: url("image_01.png");
+            position:relative;
+        }
+
+        .corner {
+            width: 0;
+            height: 0px;
+            border-top: 400px solid transparent;
+            border-left: 400px solid transparent;
+            border-bottom: 400px solid beige;
+            border-right: 400px solid beige;
+            float: right;
+        }
+
+        .corner span {
+            position: absolute;
+            bottom: 35px;
+            width: 100px;
+            right: 5px;
+            text-align: center;
+            font-size: 16px;
+            font-family: arial;
+            /*transform: rotate(-45deg);*/
+            display:block;
+        }
+
+        body {
+            background-color: grey;
+        }
+
+        .wrapper {
+            width: 1180px;
+            height: 4500px;
+            background-color: beige;
+            position: relative;
+            margin: 0 auto;
+
+        }
+
+        nav {
+            width: 1180px;
+            height: 100px;
+            background-color: darkred;
+            color:darkgrey;
+            margin: 0 auto;
+            padding-top: 50px;
+            text-align: center;
+        }
+
+        p#nav_section_01, p#nav_section_02, p#nav_section_03, p#nav_section_04 {
+            display: inline;
+            font-size: 24px;
+            font-family: rufina, serif;
+            font-weight: bold;
+            padding: 0 25px;
+        }
+
+        a:link {
+            text-decoration: none;
+            color: white;
+        }
+
+        a:visited {
+            text-decoration: none;
+            color: blue;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: black;
+        }
+
+        #section_01, #section_03 {
+            width: 1180px;
+            height: 800px;
+            background-color: black;
+            color: darkgrey;
+            margin: 0 auto;
+        }
+
+        #section_02, #section_04 {
+            width: 1180px;
+            height: 800px;
+            background-color: white;
+            color: beige;
+            margin: 0 auto;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 25px;
+        }
+
+    </style>
+
+
+</head>
+<body>
+<div id="top"></div>
+<div class="wrapper"></div>
+<div class="frame1"></div>
+<div class="corner"></div>
+
+    <nav>
+        <a href="#section_01"><p id="nav_section_01">HOME</p></a>
+        <a href="#section_02"><p id="nav_section_02">GALLERY</p></a>
+        <a href="#section_03"><p id="nav_section_03">CONTACT</p></a>
+        <a href="#section_04"><p id="nav_section_04">BOOK</p></a>
+
+
+    </nav>
+
+    <div id="section_01"><p>Section One</p></div>
+    <div id="section_02"><p>Section Two</p></div>
+    <div id="section_03"><p>Section Three</p></div>
+    <div id="section_04"><p>Section Four</p></div>
+
+    <a href="#top"><p class="footer">SCROLL BACK TO TOP</p></a>
+</div><!--end of wrapper -->
+<script>
+
+</script>
+</body>
+</html>
