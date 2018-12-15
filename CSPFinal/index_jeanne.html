@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Countryside Photography</title>
+    <style>
+
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: white;
+        }
+
+        .wrapper {
+            width: 1600px;
+            height: 3800px;
+            background-color: transparent;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Centered text */
+        .kokorose {
+            position: center;
+            top: 50%;
+            left: 50%;
+            transform: translate(-0%, 0%);
+            font-size: 45px;
+            color: white;
+            border-style: solid;
+            border-color: white;
+            font-family: "Gill Sans";
+            background-color: transparent;
+            margin: 650px;
+            margin-top: -165px;
+            background-color: orangered;
+        }
+
+        .contactinfo {
+            background-color: transparent;
+            font-family: "Al Nile";
+            color: orangered;
+            font-size: 13pt;
+            text-align: center;
+            padding-bottom: 15px;
+            position: center;
+            border-style: solid;
+            border-color: white;
+
+        }
+
+        .HOMEPAGE {
+            width: 1600px;
+            height: 950px;
+            background-image: url("kokohome.jpg");
+        }
+
+        .ABOUTUS {
+            width: 1600px;
+            height: 950px;
+            background-color: white;
+            font-family: "Al Nile";
+            color: orangered;
+            font-size: 14pt;
+            text-align: center;
+            margin-top 300px;
+            padding: 250px 350px 350px;
+        }
+
+        p {
+            font-size: 22px;
+        }
+
+        span {
+            font-size: 22px;
+            color: orangered;
+            font-family: "Gill Sans";
+        }
+
+        .BOOKPAGE {
+            width: 1600px;
+            height: 950px;
+            background-color: white;
+            font-family: "Al Nile";
+            color: white;
+            font-size: 14pt;
+            text-align: center;
+            margin-top 300px;
+            padding: 250px 350px 350px;
+        }
+
+        .CONTACTPAGE {
+            width: 1600px;
+            height: 950px;
+            background-image: url("kokoslidefooter.jpg");
+            text-align: center;
+            padding: 20px 650px 650px;
+        }
+
+        nav {
+            text-align: center;
+
+        }
+
+        /* button {
+             width: 90px;
+             height: 30px;
+             border-radius: 20px;
+             font-family: "Avenir Next"
+             font-size: 20px;
+             text-align: center;
+             background-color: palegoldenrod;
+             border-color: white;
+             border-width: 3px;
+         }
+
+
+         a {
+             display: inline-block;
+             margin: 0 25px;
+             margin-top: 20px;
+         }
+
+         a:link {
+             text-decoration: none;
+             color: white;
+             text-shadow: black;
+         }
+
+         a:visited {
+             text-decoration: none;
+             color: black;
+         }
+
+         a:hover {
+             text-decoration: none;
+             color: white;
+         }
+
+
+         */
+
+        * {
+            box-sizing: border-box
+        }
+
+        /* Slideshow container */
+
+        .slideshow-container {
+            max-width: 1600px;
+            max-height: 950px;
+            position: relative;
+            margin: auto;
+        }
+
+        /* Hide the images by default */
+        .mySlides {
+            display: none;
+        }
+
+        /* Next & previous buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: red;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Caption text */
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+            background-color: orangered;
+        }
+
+        /* Fading animation */
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @-webkit-keyframes fade {
+            from {
+                opacity: .4
+            }
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+            to {
+                opacity: 1
+            }
+        }
+
+        /* syntax for css*/
+
+        /* The sidebar menu */
+        .sidebar {
+            height: 100%; /* 100% Full-height */
+            width: 0; /* 0 width - change this with JavaScript */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Stay on top */
+            top: 0;
+            left: 0;
+            background-color: orangered; /* Black*/
+            overflow-x: hidden; /* Disable horizontal scroll */
+            padding-top: 60px; /* Place content 60px from the top */
+            transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+        }
+
+        /* The sidebar links */
+        .sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+            font-family: "Gill Sans";
+        }
+
+        /* When you mouse over the navigation links, change their color */
+        .sidebar a:hover {
+            color: #f1f1f1;
+        }
+
+        /* Position and style the close button (top right corner) */
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 10px;
+            font-size: 32px;
+            margin-left: 50px;
+        }
+
+        /* The button used to open the sidebar */
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: transparent;
+            color: white;
+            font-weight: light bold;
+            border: none;
+            margin-top: 535px;
+            margin-left: 740px;
+            font-family: "Gill Sans";
+
+        }
+
+        .openbtn:hover {
+            background-color: transparent;
+        }
+
+        /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+        #main {
+            transition: margin-left .5s; /* If you want a transition effect */
+            padding: 20px;
+        }
+
+        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+        @media screen and (max-height: 450px) {
+            .sidebar {
+                padding-top: 15px;
+            }
+
+            .sidebar a {
+                font-size: 18px;
+            }
+        }
+
+        /* Style all font awesome icons */
+
+        /* Add a hover effect if you want */
+        .fa:hover {
+            opacity: 0.7;
+        }
+
+        /* Set a specific color for each brand */
+
+        /* Facebook */
+        .fa-facebook {
+            background: orangered;
+            color: white;
+        }
+
+        /* Twitter */
+        .fa-soundcloud {
+            background: orangered;
+            color: white;
+            margin-left: 4px;
+        }
+
+        .fa-instagram {
+            background: orangered;
+            color: white;
+        }
+
+        .fa {
+            padding: 20px;
+            font-size: 30px;
+            width: 60px;
+            text-align: center;
+            text-decoration: white;
+            border-radius: 100%;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+
+<div id="top"></div>
+<div class="wrapper">
+
+
+    <div class="HOMEPAGE">
+
+        <!-- sidebar html -->
+
+        <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Gallery</a>
+            <a href="#">Book</a>
+            <a href="#">Contact</a>
+            <br>
+
+        </div>
+
+
+        <div id="main">
+            <button class="openbtn" onclick="openNav()">EXPLORE</button>
+        </div>
+
+
+        <nav>
+            <div class="kokorose">KOKO ROSE</div>
+        </nav>
+
+
+    </div>
+
+
+    <div class="ABOUTUS">
+
+        <p>
+            <span>JEANNE WALKER</span> <br><br>
+            ____________________
+        </p>
+        <br><br>
+        Going by the name Koko Rose, Jeanne Walker is a self-taught musician, hailing from Rochester Minnesota, where she grew up
+        with her twin sister, Brittany, and mother, Nancy. The now LA-based artist holds roots in singing and song
+        writing since the tender age of 8. Jeanne obtained her music roots from her mother, a folk singer. Her music is
+        best described as “dreamy,
+        sad, alternative pop music.”
+        Koko Rose's songs are the result of plentiful self-reflection, love, hurt, sadness, strength, and facing the
+        unrequited. When Jeanne was 14 she began performing in restaurants,
+        open mics, pubs, while occasionally busking. When she started getting noticed around her home-town
+        and near by cities, she made her way to newspaper covers and blogs, which lead her to make the move to Chicago
+        to study music, and eventually Los Angeles to perfect her craft. After a 2-year hiatus of building and perfecting
+        her sound in LA, she is now ready to showcase a new phase of her music career, known as Koko Røse.
+        <br>
+
+
+    </div>
+
+
+    <div class="GALLERYPAGE">
+
+
+        <!-- Slideshow container -->
+        <div class="slideshow-container">
+
+            <!-- Full-width images with number and caption text -->
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 4</div>
+                <img src="kokoslide4.jpg" style="width:100%">
+                <div class="text"></div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 4</div>
+                <img src="kokoslide3.jpg" style="width:100%">
+                <div class="text"></div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">4 / 4</div>
+                <img src="kokoslide1.jpg" style="width:100%">
+                <div class="text"></div>
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">4 / 4</div>
+                <img src="kokoslide5.jpg" style="width:100%">
+                <div class="text"></div>
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">4 / 4</div>
+                <img src="kokoslide9.jpg" style="width:100%">
+                <div class="text"></div>
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">4 / 4</div>
+                <img src="kokoslide6.jpg" style="width:100%">
+                <div class="text"></div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">4 / 4</div>
+                <img src="kokoslide7.jpg" style="width:100%">
+                <div class="text"></div>
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">4 / 4</div>
+                <img src="kokoslide8.jpg" style="width:100%">
+                <div class="text"></div>
+            </div>
+
+
+
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+
+        <!-- The dots/circles -->
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+
+
+    </div>
+
+
+    <div class="BOOKPAGE">
+
+
+        <p>
+            <span>BOOK NOW!</span> <br><br>
+            ____________________
+        </p>
+        <br><br>
+
+        <form action="/action_page.php">
+            <input type="text" name="FirstName" value="EVENT">
+            <input type="text" name="LastName" value="DATES"><br><br>
+            <input type="text" name="FirstName" value="PHONE">
+            <input type="text" name="LastName" value="ADDRESS"><br><br>
+            <input type="text" name="FirstName" value="FIRST NAME">
+            <input type="text" name="LastName" value="LAST NAME"><br><br>
+
+            <input type="submit" value="BOOK">
+        </form>
+
+
+        <br>
+
+    </div>
+
+
+    <div class="CONTACTPAGE">
+
+        <p>
+            <span>KOKO ROSE</span> <br>
+            ____________________
+
+        </p>
+        <br>
+        <div class="contactinfo">
+            <br>
+            PHONE<br> 507-271-4259<br><br>
+            BOOKING EMAIL<br>jeannewalkermusic@gmail.com<br>
+            <br>
+
+            STUDIO HOURS<br> 4PM-10PM
+            Monday-Friday<br>
+            <br>
+            2733 Neal Ave N. <br> Los Angeles, Ca 95082<br>
+            <br>
+            <!-- Add icon library -->
+            <link rel="stylesheet"
+                  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+            <!-- Add font awesome icons -->
+            <a href="https://www.facebook.com/lookitsrose/" class="fa fa-facebook"></a>
+            <a href="https://www.instagram.com/lookitsrose/" class="fa fa-instagram"</a>
+            <a href="https://m.soundcloud.com/thisisrose" class="fa fa-soundcloud"></a>
+
+
+
+
+
+        </div>
+
+
+    </div>
+
+
+    <!-- LINKS?
+
+        <nav>
+            <a href="#section_01">
+                <button>Home</button>
+            </a>
+
+
+            <a href="#section_02">
+                <button>Gallery</button>
+            </a>
+
+
+            <a href="#section_03">
+                <button>Contact</button>
+            </a>
+
+            <a href="#section_03">
+                <button>Book</button>
+            </a>
+        </nav>
+    </div>
+
+    -->
+
+
+</div> <!-- closing div for wrapper -->
+
+<script>
+
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = slides.length
+        }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+
+
+    /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+    function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+    }
+
+    /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+    function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+    }
+
+
+</script>
+
+</body>
